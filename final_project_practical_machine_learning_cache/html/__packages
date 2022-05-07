@@ -1,0 +1,10 @@
+base
+readr
+lattice
+ggplot2
+caret
+kernlab
+tibble
+bitops
+rattle
+corrplot
