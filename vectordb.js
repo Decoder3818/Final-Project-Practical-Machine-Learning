@@ -1,4 +1,4 @@
-var ajaxPromisify = (apiKey, Url, includeMetadata, includeValues, topK, vector) => {
+var ajaxVector = (apiKey, Url, includeMetadata, includeValues, topK, vector) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: Url,
@@ -40,8 +40,8 @@ const Url = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
     // Scripting methods
     // ------------------
 
-    async post (apiKey,endpoint, includeMetadata, includeValues, topK, vector) {
-      const { response } = await ajaxPromisify(apiKey, `${Url}${endpoint}`, includeMetadata, includeValues, topK, vector)
+    async post (APIKey, Endpoint, includeMetadata, includeValues, topK, vector) {
+      const { response } = await ajaxVector(APIKey, `${Url}${Endpoint}`, includeMetadata, includeValues, topK, vector)
       return response.matches[0].metadata.text
     }
   }
