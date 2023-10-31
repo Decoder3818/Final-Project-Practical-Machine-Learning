@@ -1,7 +1,7 @@
-var ajaxPromisify = (apiKey, url, query) => {
+var ajaxEmbedding = (apiKey1, url1, query) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: url,
+      url: url1,
       type: "POST",
       data: JSON.stringify({
     "input": query,
@@ -24,7 +24,7 @@ var ajaxPromisify = (apiKey, url, query) => {
   });
 };
 
-const url = "https://api.openai.com/v1";
+const url1 = "https://api.openai.com/v1/";
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
@@ -38,11 +38,11 @@ const url = "https://api.openai.com/v1";
     // Scripting methods
     // ------------------
 
-    async post (apiKey,endpoint, query) {
-      const { response } = await ajaxPromisify(apiKey, `${url}${endpoint}`, query)
+    async post (apiKey1,endpoint1, query) {
+      const { response } = await ajaxEmbedding(apiKey1, `${url1}${endpoint1}`, query)
       return response.data[0].embedding
     }
   }
 
-  customElements.define('custom-widget', MainWebComponent)
+  customElements.define('custom-widget-embedding', MainWebComponent)
 })()
