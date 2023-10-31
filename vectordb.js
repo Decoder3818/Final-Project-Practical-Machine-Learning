@@ -46,5 +46,5 @@ const url = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
     }
   }
 
-  customElements.define('custom-widget', MainWebComponent)
+  customElements.define('custom-wid', MainWebComponent)
 })()
