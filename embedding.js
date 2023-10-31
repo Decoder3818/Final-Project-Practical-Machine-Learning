@@ -9,7 +9,7 @@ var ajaxEmbedding = (apiKey1, url1, query) => {
   }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey1}`,
       },
       crossDomain: true,
       success: function (response, status, xhr) {
