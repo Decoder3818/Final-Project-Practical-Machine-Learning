@@ -1,7 +1,7 @@
-var ajaxPromisify = (apiKey, url, includeMetadata, includeValues, topK, vector) => {
+var ajaxPromisify = (apiKey, URL, includeMetadata, includeValues, topK, vector) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: url,
+      url: URL,
       type: "POST",
       data: JSON.stringify({
       "includeMetadata": includeMetadata,
@@ -26,7 +26,7 @@ var ajaxPromisify = (apiKey, url, includeMetadata, includeValues, topK, vector) 
   });
 };
 
-const url = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
+const URL = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
@@ -41,7 +41,7 @@ const url = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
     // ------------------
 
     async post (apiKey,endpoint, includeMetadata, includeValues, topK, vector) {
-      const { response } = await ajaxPromisify(apiKey, `${url}${endpoint}`, includeMetadata, includeValues, topK, vector)
+      const { response } = await ajaxPromisify(apiKey, `${URL}${endpoint}`, includeMetadata, includeValues, topK, vector)
       return response.matches[0].metadata.text
     }
   }
