@@ -1,10 +1,10 @@
-var ajaxPromisify = (apiKey, url, includeMetaData, includeValues, topK, vector) => {
+var ajaxPromisify = (apiKey, url, includeMetadata, includeValues, topK, vector) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: url,
       type: "POST",
       data: JSON.stringify({
-      "includeMetadata": includeMetaData,
+      "includeMetadata": includeMetadata,
       "includeValues": includeValues,
       "topK": topK,
       "vector" : vector
@@ -46,5 +46,5 @@ const url = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
     }
   }
 
-  customElements.define('custom-widget-vector', MainWebComponent)
+  customElements.define('custom-widget', MainWebComponent)
 })()
