@@ -11,7 +11,7 @@ var ajaxPromisify = (apiKey, url, includeMetaData, includeValues, topK, vector) 
   }),
       headers: {
         "Content-Type": "application/json",
-        "Api-Key": apiKey,
+        "Api-Key": apiKey
       },
       crossDomain: true,
       success: function (response, status, xhr) {
