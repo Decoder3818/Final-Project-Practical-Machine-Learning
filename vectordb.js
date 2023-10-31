@@ -40,7 +40,7 @@ const url = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
     // Scripting methods
     // ------------------
 
-    async post (apiKey,endpoint, query) {
+    async post (apiKey,endpoint, includeMetadata, includeValues, topK, vector) {
       const { response } = await ajaxPromisify(apiKey, `${url}${endpoint}`, includeMetadata, includeValues, topK, vector)
       return response.matches[0].metadata.text
     }
