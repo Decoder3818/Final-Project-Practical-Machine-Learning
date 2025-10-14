@@ -26,7 +26,7 @@ var ajaxVector = (apiKey, Url, includeMetadata, includeValues, topK, vector) => 
   });
 };
 
-const Url = "https://tax-news-0832749.svc.gcp-starter.pinecone.io";
+const Url = "https://tax-news-0832749.svc.aped-4627-b74a.pinecone.io";
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
